@@ -6,7 +6,11 @@
     "cSpell.words": [
         "customtkinter",
         "fileupload",
-        "vidplayer"
+        "imread",
+        "ultralytics",
+        "vidplayer",
+        "YOLO",
+        "yolov"
     ],
     "python.REPL.enableREPLSmartSend": false
 }

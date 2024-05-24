@@ -11,7 +11,7 @@ class Video(CTkFrame):
             self, corner_radius=99, text="Upload A Video", command=self.open_video
         )
 
-        self.vidplayer = TkinterVideo(self, True, True, True, bg="black")
+        self.vidplayer = TkinterVideo(self, True, True, True, bg="#000")
         self.vidplayer.set_resampling_method(1)
         self.vidplayer.pack(expand=True, fill="both", padx=10, pady=10)
         self.vidplayer.bind("<<Duration>>", self.update_duration)
@@ -30,18 +30,18 @@ class Video(CTkFrame):
         self.play_pause_btn.pack(pady=10)
 
     def open_video(self):
-        self.vid_player.stop()
-        global video_file
-        video_file = filedialog.askopenfilename(
+        self.vidplayer.stop()
+        self.video_file = filedialog.askopenfilename(
             filetypes=[
                 ("Video", ["*.mp4", "*.avi", "*.mov", "*.mkv", "*gif"]),
                 ("All Files", "*.*"),
             ]
         )
-        if video_file:
+
+        if self.video_file:
             try:
-                self.vid_player.load(video_file)
-                self.vid_player.play()
+                self.vidplayer.load(self.video_file)
+                self.vidplayer.play()
                 self.progress_slider.set(-1)
                 self.play_pause_btn.configure(text="Pause ||")
             except:
@@ -50,7 +50,7 @@ class Video(CTkFrame):
 
     def update_duration(self):
         try:
-            duration = int(self.vid_player.video_info()["duration"])
+            duration = int(self.vidplayer.video_info()["duration"])
             self.progress_slider.configure(
                 from_=-1, to=duration, number_of_steps=duration
             )
@@ -59,7 +59,7 @@ class Video(CTkFrame):
 
     def update_scale(self):
         try:
-            self.progress_slider.set(int(self.vid_player.current_duration()))
+            self.progress_slider.set(int(self.vidplayer.current_duration()))
         except:
             pass
 
@@ -72,12 +72,12 @@ class Video(CTkFrame):
         pass
 
     def play_pause(self):
-        if video_file:
-            if self.vid_player.is_paused():
-                self.vid_player.play()
+        if self.video_file:
+            if self.vidplayer.is_paused():
+                self.vidplayer.play()
                 self.play_pause_btn.configure(text="Pause ||")
 
             else:
-                self.vid_player.pause()
+                self.vidplayer.pause()
                 self.play_pause_btn.configure(text="Play ►")
         pass

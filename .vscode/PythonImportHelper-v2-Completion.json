@@ -41,6 +41,14 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "isExtraImport": true,
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
         "label": "tkinter",
         "kind": 6,
         "isExtraImport": true,
@@ -82,11 +90,53 @@
         "documentation": {}
     },
     {
+        "label": "TkinterVideo",
+        "importPath": "tkVideoPlayer",
+        "description": "tkVideoPlayer",
+        "isExtraImport": true,
+        "detail": "tkVideoPlayer",
+        "documentation": {}
+    },
+    {
         "label": "Video",
         "importPath": "video",
         "description": "video",
         "isExtraImport": true,
         "detail": "video",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "supervision",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "supervision",
+        "description": "supervision",
+        "detail": "supervision",
+        "documentation": {}
+    },
+    {
+        "label": "YOLO",
+        "importPath": "ultralytics",
+        "description": "ultralytics",
+        "isExtraImport": true,
+        "detail": "ultralytics",
+        "documentation": {}
+    },
+    {
+        "label": "YOLO",
+        "importPath": "ultralytics",
+        "description": "ultralytics",
+        "isExtraImport": true,
+        "detail": "ultralytics",
         "documentation": {}
     },
     {
@@ -246,8 +296,17 @@
         "kind": 6,
         "importPath": "video",
         "description": "video",
-        "peekOfCode": "class Video(CTkFrame):\n    def __init__(self, parent: CTk):\n        super().__init__(self, master=parent)\n        self.button = CTkButton(\n            self, corner_radius=99, text=\"Upload A Video\", command=self.open_video\n        )\n        self.vidplayer = TkinterVideo(self, True, True, True, bg=\"black\")\n        self.vidplayer.set_resampling_method(1)\n        self.vidplayer.pack(expand=True, fill=\"both\", padx=10, pady=10)\n        self.vidplayer.bind(\"<<Duration>>\", self.update_duration)",
+        "peekOfCode": "class Video(CTkFrame):\n    def __init__(self, parent: CTk):\n        super().__init__(self, master=parent)\n        self.button = CTkButton(\n            self, corner_radius=99, text=\"Upload A Video\", command=self.open_video\n        )\n        self.vidplayer = TkinterVideo(self, True, True, True, bg=\"#000\")\n        self.vidplayer.set_resampling_method(1)\n        self.vidplayer.pack(expand=True, fill=\"both\", padx=10, pady=10)\n        self.vidplayer.bind(\"<<Duration>>\", self.update_duration)",
         "detail": "video",
+        "documentation": {}
+    },
+    {
+        "label": "Model",
+        "kind": 6,
+        "importPath": "yolo",
+        "description": "yolo",
+        "peekOfCode": "class Model:\n    def __init__(self, video_path):\n        super().__init__(self)\n        self.model = YOLO(\"yolov8n.pt\")",
+        "detail": "yolo",
         "documentation": {}
     }
 ]
