@@ -1,0 +1,12 @@
+{
+    "cSpell.ignoreWords": [
+        "padx",
+        "pady"
+    ],
+    "cSpell.words": [
+        "customtkinter",
+        "fileupload",
+        "vidplayer"
+    ],
+    "python.REPL.enableREPLSmartSend": false
+}

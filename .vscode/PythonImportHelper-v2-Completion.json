@@ -1,0 +1,253 @@
+[
+    {
+        "label": "customtkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "isExtraImport": true,
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "isExtraImport": true,
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "isExtraImport": true,
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "isExtraImport": true,
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "TkinterVideo",
+        "importPath": "tkVideoPlayer",
+        "description": "tkVideoPlayer",
+        "isExtraImport": true,
+        "detail": "tkVideoPlayer",
+        "documentation": {}
+    },
+    {
+        "label": "TkinterVideo",
+        "importPath": "tkVideoPlayer",
+        "description": "tkVideoPlayer",
+        "isExtraImport": true,
+        "detail": "tkVideoPlayer",
+        "documentation": {}
+    },
+    {
+        "label": "TkinterVideo",
+        "importPath": "tkVideoPlayer",
+        "description": "tkVideoPlayer",
+        "isExtraImport": true,
+        "detail": "tkVideoPlayer",
+        "documentation": {}
+    },
+    {
+        "label": "Video",
+        "importPath": "video",
+        "description": "video",
+        "isExtraImport": true,
+        "detail": "video",
+        "documentation": {}
+    },
+    {
+        "label": "open_video",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "FileUpload",
+        "kind": 6,
+        "importPath": "components.fileupload",
+        "description": "components.fileupload",
+        "peekOfCode": "class FileUpload(CTkFrame):\n    def __init__(self, parent: CTk):\n        super().__init__(parent)\n        self.label = CTkLabel(self, text=\"Upload  File\")\n        self.label.grid(row=0, column=0, padx=20)",
+        "detail": "components.fileupload",
+        "documentation": {}
+    },
+    {
+        "label": "VideoFrame",
+        "kind": 6,
+        "importPath": "components.VideoFrame",
+        "description": "components.VideoFrame",
+        "peekOfCode": "class VideoFrame(CTkFrame):\n    def __init__(self, parent: CTk, **kwargs):\n        super().__init__(parent, **kwargs)",
+        "detail": "components.VideoFrame",
+        "documentation": {}
+    },
+    {
+        "label": "open_video",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def open_video():\n    vid_player.stop()\n    global video_file\n    video_file = tkinter.filedialog.askopenfilename(\n        filetypes=[\n            (\"Video\", [\"*.mp4\", \"*.avi\", \"*.mov\", \"*.mkv\", \"*gif\"]),\n            (\"All Files\", \"*.*\"),\n        ]\n    )\n    if video_file:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "update_duration",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def update_duration(event):\n    try:\n        duration = int(vid_player.video_info()[\"duration\"])\n        progress_slider.configure(from_=-1, to=duration, number_of_steps=duration)\n    except:\n        pass\ndef seek(value):\n    if video_file:\n        try:\n            vid_player.seek(int(value))",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "seek",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def seek(value):\n    if video_file:\n        try:\n            vid_player.seek(int(value))\n            vid_player.play()\n            vid_player.after(50, vid_player.pause)\n            play_pause_btn.configure(text=\"Play ►\")\n        except:\n            pass\ndef update_scale(event):",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "update_scale",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def update_scale(event):\n    try:\n        progress_slider.set(int(vid_player.current_duration()))\n    except:\n        pass\ndef play_pause():\n    if video_file:\n        if vid_player.is_paused():\n            vid_player.play()\n            play_pause_btn.configure(text=\"Pause ||\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "play_pause",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def play_pause():\n    if video_file:\n        if vid_player.is_paused():\n            vid_player.play()\n            play_pause_btn.configure(text=\"Pause ||\")\n        else:\n            vid_player.pause()\n            play_pause_btn.configure(text=\"Play ►\")\ndef video_ended(event):\n    play_pause_btn.configure(text=\"Play ►\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "video_ended",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def video_ended(event):\n    play_pause_btn.configure(text=\"Play ►\")\n    progress_slider.set(-1)\ncustomtkinter.set_appearance_mode(\"System\")\ncustomtkinter.set_default_color_theme(\"blue\")\napp = customtkinter.CTk()\napp.geometry(\"600x500\")\napp.title(\"CustomTkinter x TkVideoPlayer.py\")\nvideo_file = \"\"\nframe_1 = customtkinter.CTkFrame(master=app, corner_radius=15)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = customtkinter.CTk()\napp.geometry(\"600x500\")\napp.title(\"CustomTkinter x TkVideoPlayer.py\")\nvideo_file = \"\"\nframe_1 = customtkinter.CTkFrame(master=app, corner_radius=15)\nframe_1.pack(pady=20, padx=20, fill=\"both\", expand=True)\nbutton_1 = customtkinter.CTkButton(\n    master=frame_1, text=\"Open Video\", corner_radius=8, command=open_video\n)\nbutton_1.pack(pady=10, padx=10)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "video_file",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "video_file = \"\"\nframe_1 = customtkinter.CTkFrame(master=app, corner_radius=15)\nframe_1.pack(pady=20, padx=20, fill=\"both\", expand=True)\nbutton_1 = customtkinter.CTkButton(\n    master=frame_1, text=\"Open Video\", corner_radius=8, command=open_video\n)\nbutton_1.pack(pady=10, padx=10)\nvid_player = TkinterVideo(\n    master=frame_1,\n    scaled=True,",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "frame_1",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "frame_1 = customtkinter.CTkFrame(master=app, corner_radius=15)\nframe_1.pack(pady=20, padx=20, fill=\"both\", expand=True)\nbutton_1 = customtkinter.CTkButton(\n    master=frame_1, text=\"Open Video\", corner_radius=8, command=open_video\n)\nbutton_1.pack(pady=10, padx=10)\nvid_player = TkinterVideo(\n    master=frame_1,\n    scaled=True,\n    keep_aspect=True,",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "button_1",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "button_1 = customtkinter.CTkButton(\n    master=frame_1, text=\"Open Video\", corner_radius=8, command=open_video\n)\nbutton_1.pack(pady=10, padx=10)\nvid_player = TkinterVideo(\n    master=frame_1,\n    scaled=True,\n    keep_aspect=True,\n    consistant_frame_rate=True,\n    bg=\"black\",",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "vid_player",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "vid_player = TkinterVideo(\n    master=frame_1,\n    scaled=True,\n    keep_aspect=True,\n    consistant_frame_rate=True,\n    bg=\"black\",\n)\nvid_player.set_resampling_method(1)\nvid_player.pack(expand=True, fill=\"both\", padx=10, pady=10)\nvid_player.bind(\"<<Duration>>\", update_duration)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "progress_slider",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "progress_slider = customtkinter.CTkSlider(\n    master=frame_1, from_=-1, to=1, number_of_steps=1, command=seek\n)\nprogress_slider.set(-1)\nprogress_slider.pack(fill=\"both\", padx=10, pady=10)\nplay_pause_btn = customtkinter.CTkButton(\n    master=frame_1, text=\"Play ►\", command=play_pause\n)\nplay_pause_btn.pack(pady=10)\napp.mainloop()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "play_pause_btn",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "play_pause_btn = customtkinter.CTkButton(\n    master=frame_1, text=\"Play ►\", command=play_pause\n)\nplay_pause_btn.pack(pady=10)\napp.mainloop()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class App(CTk):\n    def __init__(self):\n        super().__init__(self)\n        set_appearance_mode(\"dark\")\n        set_default_color_theme(\"dark-blue\")\n        self.title(\"Traffic Violation Detection System\")\n        self.geometry(\"600x600\")\n        self.minsize(600, 600)\n        self.frame = Video(self)\n        self.mainloop()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Video",
+        "kind": 6,
+        "importPath": "video",
+        "description": "video",
+        "peekOfCode": "class Video(CTkFrame):\n    def __init__(self, parent: CTk):\n        super().__init__(self, master=parent)\n        self.button = CTkButton(\n            self, corner_radius=99, text=\"Upload A Video\", command=self.open_video\n        )\n        self.vidplayer = TkinterVideo(self, True, True, True, bg=\"black\")\n        self.vidplayer.set_resampling_method(1)\n        self.vidplayer.pack(expand=True, fill=\"both\", padx=10, pady=10)\n        self.vidplayer.bind(\"<<Duration>>\", self.update_duration)",
+        "detail": "video",
+        "documentation": {}
+    }
+]
